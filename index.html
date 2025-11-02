@@ -22,7 +22,7 @@
       overflow-x: hidden;
     }
 
-    /* Background image with grayscale, blur, and low opacity */
+    /* Background image with blur and full opacity */
     body::before {
       content: "";
       position: fixed;
@@ -33,8 +33,8 @@
       background-image: url("https://preview.redd.it/our-new-key-art-what-do-you-think-what-kind-of-game-do-you-v0-2qc18hhhigwf1.png?width=1920&crop=smart&auto=webp&s=40d5edf18c647495dbf33988b0db8e101ae6864e");
       background-size: cover;
       background-position: center;
-      filter: grayscale(100%) blur(8px);
-      opacity: 0.1;
+      filter: blur(8px);
+      opacity: 1.0;
       z-index: -1;
     }
 
