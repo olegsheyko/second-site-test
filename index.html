@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,59 +11,106 @@
       box-sizing: border-box;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
+
     body {
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background-color: #1a0e0e; /* grey-red base */
       color: #f0f0f0;
       line-height: 1.6;
       padding: 2rem;
       min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
     }
+
+    /* Background image with grayscale, blur, and low opacity */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://preview.redd.it/our-new-key-art-what-do-you-think-what-kind-of-game-do-you-v0-2qc18hhhigwf1.png?width=1920&crop=smart&auto=webp&s=40d5edf18c647495dbf33988b0db8e101ae6864e");
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%) blur(8px);
+      opacity: 0.1;
+      z-index: -1;
+    }
+
     .container {
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
     }
+
     h1 {
       font-size: 2.8rem;
       margin-bottom: 1rem;
-      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      background: linear-gradient(to right, #ff4d4d, #cc5555);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
+
     .subtitle {
       font-size: 1.2rem;
       margin-bottom: 2rem;
       color: #ccc;
     }
+
     .game-image {
       width: 100%;
       max-width: 640px;
       height: auto;
       border-radius: 12px;
       margin: 1.5rem auto;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
       display: block;
+      border: 2px solid rgba(200, 50, 50, 0.3);
     }
+
     p {
       margin-bottom: 1.5rem;
       font-size: 1.1rem;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
     }
+
+    .video-container {
+      margin: 2rem auto;
+      max-width: 640px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+    }
+
     .cta-button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       margin-top: 1.5rem;
-      padding: 12px 32px;
-      background: linear-gradient(to right, #ff7e5f, #feb47b);
-      color: #000;
+      padding: 12px 24px;
+      background: linear-gradient(to right, #0f87c9, #1a9fff); /* Steam blue */
+      color: white;
       font-weight: bold;
       text-decoration: none;
       border-radius: 30px;
       transition: transform 0.2s, box-shadow 0.2s;
+      font-size: 1.1rem;
     }
+
     .cta-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(255, 126, 95, 0.4);
+      box-shadow: 0 6px 16px rgba(0, 135, 201, 0.5);
     }
+
     footer {
       margin-top: 3rem;
       color: #888;
@@ -82,23 +129,33 @@
       class="game-image">
 
     <p>
-      Иммерсивный симулятор мясника-зомби, ведущего двойную жизнь в надежде заработать на лекарство.
+      An immersive simulator where you play as a zombie butcher leading a double life—running a meat shop by day and hunting humans by night.
     </p>
 
     <p>
-      Управляй мясной лавкой днём и охоться на людей ночью — балансируй между моралью, выживанием и прибылью в мире, где каждый хочет тебя уничтожить.
+      Balance morality, survival, and profit in a hostile world where everyone wants you dead… but your customers keep coming back for more!
     </p>
+
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/LmfK3sx_TEY?rel=0" 
+        title="ZOMBUTCHER Trailer"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
 
     <a href="https://store.steampowered.com/app/4039900/ZOMBUTCHER_Monster_Business_Simulator/" 
        target="_blank" 
        rel="noopener noreferrer" 
        class="cta-button">
-      Играть на Steam
+      <!-- Steam Logo SVG -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.47 16.53l-4.47-2.53v-4.5l4.47-2.53V16.53zM7.5 16.5L3 14v-4l4.5-2.5v9zm9-11.5l-4.5 2.5v-2l4.5-2.5v2zm-9 2l4.5 2.5v-2L7.5 7v2zm0 3l4.5 2.5v-2L7.5 10v2z"/>
+      </svg>
+      Play on Steam
     </a>
-
-    <footer>
-      © 2026 Oleg Sheyko. Все права защищены.
-    </footer>
   </div>
 </body>
 </html>
+
